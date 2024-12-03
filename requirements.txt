@@ -1,0 +1,15 @@
+fastapi
+sqlalchemy
+psycopg2-binary
+python-dotenv
+sqlalchemy_enum34
+passlib
+bcrypt
+uvicorn
+python-jose[cryptography]
+langchain
+langchain-groq
+sentence_transformers
+pypdf
+faiss-cpu
+langchain-community
