@@ -106,6 +106,7 @@ def load_chain(vector_db, user_id):
     <Resume Content>
     {summaries}
     <Resume Content>
+    ALWAYS GIVE ANSWER IN TABLE FORMAT
     """
 
 
