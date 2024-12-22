@@ -96,4 +96,4 @@ class Resume(Base):
     score = Column(Integer, nullable=False, default=0)
     location = Column(String(500), index=True, nullable=True)
     upload_date = Column(DateTime, default=datetime.utcnow)
-    faiss_index = Column(Text, nullable=False)
+    resume_results = Column(Text, index=True, nullable=False)
