@@ -100,32 +100,28 @@ def load_chain(vector_db, user_id):
     Resume is Best Suited for the Following Roles: Suggest job roles or positions for which the resume is most suitable.
     Useful Links: Provide domain-specific links or resources to help the user expand their knowledge and skills. (Do not include links to resume-building or reviewing websites.)
     Response Format:
-    Always present your response in a table format, structured as follows:
-
-    ----------------------------------------------------------------------------------------------------------
-    |Category	                     |  Feedback                                                                
-    ----------------------------------------------------------------------------------------------------------
-    |Resume Score	                 |  (Score out of 100)
-    ----------------------------------------------------------------------------------------------------------
-    |Strong Parts of the Resume	     |  (List strengths in bullet points)
-    ----------------------------------------------------------------------------------------------------------
-    |Weak Parts of the Resume	     |  (List weaknesses in bullet points)
-    ----------------------------------------------------------------------------------------------------------
-    |Scope of Improvements           |	(List specific improvement areas in bullet points)
-    ----------------------------------------------------------------------------------------------------------
-    |Resume is Best Suited for Roles |	(List roles the resume is best suited for)
-    ----------------------------------------------------------------------------------------------------------
-    |Useful Links                    |	(Provide domain-specific resources to enhance knowledge or skills)
-    ----------------------------------------------------------------------------------------------------------
-    |Additional Instructions:        |
-    ----------------------------------------------------------------------------------------------------------
+    Always present your response in list of json format, structured as follows:
+    <your_answer>
+    [{{
+        "Resume Score": "(Score out of 100)/100",
+        "Strong Parts of the Resume	": "(Strengths in bullet points)",
+        "Weak Parts of the Resume": "(Weaknesses in bullet points)",
+        "Scope of Improvements": "(Specific improvement areas in bullet points)",
+        "Resume is Best Suited for Roles": "(Roles the resume is best suited for)",
+        "Useful Links": "(Provide domain-specific resources to enhance knowledge or skills)",
+        "Additional Instructions": ,
+    }}]
+    </your_answer>
+    
     Use phrases like “your skills” and “your profile” to personalize the response.
-    Strictly follow the response format and do not include any additional notes outside the table.
+    Strictly follow the response format and do not include any additional notes outside of the list of json.
     Do not provide links to resume-building or reviewing websites in the "Useful Links" section.
     Input:
 
     {question}: The user’s specific question or request.
     <Resume Content> {summaries} <Resume Content>: The actual content of the resume to be reviewed.
+    
+    <DO NOT FORGET TO GIVE RESPONSE IN LIST OF JSON FORMAT>
     """
 
 
